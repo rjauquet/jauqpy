@@ -24,7 +24,7 @@ run_redis:
 
 .PHONY: run_web
 run_web: install run_redis migrate
-	$(POETRY) run python manage.py runserver 0.0.0.0:8{{ cookiecutter.3id }}
+	$(POETRY) run python manage.py runserver 0.0.0.0:8{{ cookiecutter.id }}
 
 .PHONY: run_task
 run_task: install run_redis migrate

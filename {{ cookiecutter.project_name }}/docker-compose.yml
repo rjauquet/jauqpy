@@ -18,7 +18,7 @@ services:
             - db
             - redis
         ports:
-            - "8{{ cookiecutter.3id }}:8{{ cookiecutter.3id }}"
+            - "8{{ cookiecutter.id }}:8{{ cookiecutter.id }}"
         working_dir: /app
         command: make run_web
         tty: true
@@ -46,7 +46,7 @@ services:
     db:
         image: postgres:latest
         ports:
-            - "5{{ cookiecutter.3id }}:5432"
+            - "5{{ cookiecutter.id }}:5432"
         volumes:
             - postgres_data:/var/lib/postgresql/data
         env_file: .env
@@ -54,7 +54,7 @@ services:
     redis:
         image: redis:latest
         ports:
-            - "6{{ cookiecutter.3id }}:6379"
+            - "6{{ cookiecutter.id }}:6379"
         volumes:
             - redis_data:/data
 
