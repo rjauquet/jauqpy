@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "{{ cookiecutter.import_name }}"
+version = "0.1.0"
+description = ""
+authors = [{{ cookiecutter.authors }}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "^3.0"
+djangorestframework = "^3.11"
+django-extensions = "^2.2"
+dj-database-url = "^0.5.0"
+python-decouple = "^3.3"
+psycopg2-binary = "^2.8.4"
+
+[tool.poetry.dev-dependencies]
+isort = "*"
+black = {version = "*", allow-prereleases = true}
+ipython = "*"
+ipdb = "*"
+pylint = "*"
+pytest = "*"
+mypy = "*"
+pytest-django = "*"
+freezegun = "*"
+django-debug-toolbar = "*"
+
+[tool.black]
+
+target-version = ["py38"]
+skip-string-normalization = true
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.masonry.api"
+
+

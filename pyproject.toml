@@ -6,6 +6,7 @@ authors = ["Rob Ervin Jauquet <rob@jauqshop.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+cookiecutter = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
 

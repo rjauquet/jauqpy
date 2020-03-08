@@ -1,0 +1,6 @@
+.env
+.flag.*
+.container_data/
+docs/_build/
+*.log
+*.logs

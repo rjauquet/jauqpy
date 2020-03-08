@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+    {{ cookiecutter.import_name }}_web:
+        build: .
+        env_file: .env
+        environment:
+            DATABASE_URL: postgres://{{ cookiecutter.import_name }}:password@db:5432/{{ cookiecutter.import_name }}
+            REDIS_URL: redis://redis:6379/0
+        volumes:
+            - type: bind
+              source: .
+              target: /app
+            - type: bind
+              source: .container_data
+              target: /root
+        depends_on:
+            - db
+            - redis
+        ports:
+            - "8{{ cookiecutter.3id }}:8{{ cookiecutter.3id }}"
+        working_dir: /app
+        command: make run_web
+        tty: true
+
+    {{ cookiecutter.import_name }}_task:
+        build: .
+        env_file: .env
+        environment:
+            DATABASE_URL: postgres://{{ cookiecutter.import_name }}:password@db:5432/{{ cookiecutter.import_name }}
+            REDIS_URL: redis://redis:6379/0
+        volumes:
+            - type: bind
+              source: .
+              target: /app
+            - type: bind
+              source: .container_data
+              target: /root
+        depends_on:
+            - db
+            - redis
+        working_dir: /app
+        command: make run_task
+        tty: true
+
+    db:
+        image: postgres:latest
+        ports:
+            - "5{{ cookiecutter.3id }}:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        env_file: .env
+
+    redis:
+        image: redis:latest
+        ports:
+            - "6{{ cookiecutter.3id }}:6379"
+        volumes:
+            - redis_data:/data
+
+networks:
+    default:
+        external:
+            name: {{ cookiecutter.import_name }}
+
+volumes:
+    postres_data:
+    redis_data:
