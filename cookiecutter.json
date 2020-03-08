@@ -2,5 +2,6 @@
     "project_name": "",
     "import_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "id": "",
-    "authors": "Rob Ervin Jauquet <rob@jauqshop.com>"
+    "authors": "Rob Ervin Jauquet <rob@jauqshop.com>",
+    "app": ""
 }
