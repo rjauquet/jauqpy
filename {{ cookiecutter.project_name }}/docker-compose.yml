@@ -60,8 +60,7 @@ services:
 
 networks:
     default:
-        external:
-            name: {{ cookiecutter.import_name }}
+        name: {{ cookiecutter.import_name }}
 
 volumes:
     postres_data:

@@ -11,7 +11,7 @@ setup:
 
 .PHONY: install
 install:
-	md5sum -c $(INSTALL_FLAG) --status || \
+	@md5sum -c $(INSTALL_FLAG) --status || \
 		$(POETRY) install && md5sum poetry.lock pyproject.toml >| $(INSTALL_FLAG)
 
 .PHONY: run_db
