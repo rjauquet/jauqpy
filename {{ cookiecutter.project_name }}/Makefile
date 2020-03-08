@@ -28,7 +28,7 @@ run_web: install run_redis migrate
 
 .PHONY: run_task
 run_task: install run_redis migrate
-	$(POETRY) run python task.py {{ cookiecutter.import_name }}.huey
+	$(POETRY) run python manage.py run_huey
 
 .PHONY: run
 run: install migrate

@@ -23,8 +23,18 @@ INSTALLED_APPS = (
     'rest_framework',
     'drf_yasg',
     'corsheaders',
+    'huey.contrib.djhuey',
 )
 
 DATABASES = {'default': config('DATABASE_URL', cast=dj_database_url.parse)}
 
-
+HUEY = {
+    'immediate': False,
+    'connection': {
+        'url': config('REDIS_URL', default='redis://localhost:6379/0')
+    },
+    'consumer': {
+        'workers': 1,
+        'worker_type': 'thread',
+    },
+}

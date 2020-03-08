@@ -23,3 +23,4 @@ SWAGGER_SETTINGS = {
         }
     },
 }
+
