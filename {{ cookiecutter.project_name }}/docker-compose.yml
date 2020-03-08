@@ -63,5 +63,5 @@ networks:
         name: {{ cookiecutter.import_name }}
 
 volumes:
-    postres_data:
+    postgres_data:
     redis_data:
