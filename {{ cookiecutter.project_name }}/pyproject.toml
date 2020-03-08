@@ -18,6 +18,8 @@ psycopg2-binary = "^2.8.4"
 drf-yasg = "^1.17.0"
 django-cors-headers = "^3.2.1"
 
+redis = "^3.4.1"
+
 [tool.poetry.dev-dependencies]
 
 isort = "*"
