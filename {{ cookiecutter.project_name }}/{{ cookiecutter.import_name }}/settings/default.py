@@ -26,3 +26,5 @@ INSTALLED_APPS = (
 )
 
 DATABASES = {'default': config('DATABASE_URL', cast=dj_database_url.parse)}
+
+
