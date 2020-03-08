@@ -4,3 +4,4 @@
 docs/_build/
 *.log
 *.logs
+local.py
