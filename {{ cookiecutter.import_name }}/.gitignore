@@ -1,5 +1,5 @@
 .env
-.flag.*
+.flag*
 .container_data/
 docs/_build/
 *.log
