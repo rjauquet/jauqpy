@@ -56,6 +56,9 @@ STATIC_URL = '/static/'
 
 # Django Extensions
 SHELL_PLUS = 'ipython'
+IPYTHON_ARGUMENTS = [
+    '--ext', 'autoreload',
+]
 
 DATABASES = {'default': config('DATABASE_URL', cast=dj_database_url.parse)}
 
