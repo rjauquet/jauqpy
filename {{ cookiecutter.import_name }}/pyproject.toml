@@ -19,6 +19,7 @@ drf-yasg = "^1.17.0"
 django-cors-headers = "^3.2.1"
 
 redis = "^3.4.1"
+ulid2 = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
 
