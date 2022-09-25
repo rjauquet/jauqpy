@@ -1,7 +1,8 @@
+# type: ignore
 """
 Base admin tools for building consistent admin interfaces.
 """
-# pylint: disable=no-self-use, missing-function-docstring
+# pylint: disable=missing-function-docstring
 from django.contrib import admin
 from django.contrib.admin.models import LogEntry
 from django.contrib.contenttypes.models import ContentType

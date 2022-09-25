@@ -1,0 +1,3 @@
+"""
+{{ cookiecutter.app }} admin
+"""
