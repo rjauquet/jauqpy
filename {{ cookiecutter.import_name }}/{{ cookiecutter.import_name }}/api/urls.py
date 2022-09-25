@@ -1,21 +1,26 @@
 from django.contrib import admin
 from django.urls import include, path
-from drf_yasg import openapi
-from drf_yasg.views import get_schema_view
 
-api_info = openapi.Info(
-    title='{{ cookiecutter.project_name }} API',
-    default_version='v1',
-    description='',
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
 )
 
-schema_view = get_schema_view(
-    api_info, authentication_classes=[], permission_classes=[], public=True
-)
-
-# pylint: disable=invalid-name
 urlpatterns = [
+    path("admin/docs/", include("django.contrib.admindocs.urls")),
     path('admin/', admin.site.urls),
-    re_path('schema(?P<format>.json|.yaml)$', schema_view.without_ui()),
-    path('schema', schema_view.with_ui()),
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "api/schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    path(
+        "api/schema/redoc/",
+        SpectacularRedocView.as_view(url_name="schema"),
+        name="redoc",
+    ),
+    path("api/health/", views.health, name="health"),
+    path("api/webhook/", views.webhook, name="webhook"),
 ]

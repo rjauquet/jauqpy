@@ -1,0 +1,9 @@
+FROM Dockerfile.base
+
+COPY . ./app
+
+WORKDIR ./app
+
+RUN poetry install --no-dev
+
+ENTRYPOINT ["./bin/start-celery.sh"]

@@ -9,4 +9,4 @@ class BaseConfig(AppConfig):
     Base app
     """
 
-    name = 'base'
+    name = '{{ cookiecutter.import_name }}.base'

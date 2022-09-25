@@ -1,0 +1,10 @@
+FROM python:3.10-slim
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN pip install --upgrade pip
+RUN python -m pip install poetry
+
+RUN apt-get -u update
+RUN apt-get -y install pkg-config npm libxml2-dev libxmlsec1-dev libxmlsec1-openssl

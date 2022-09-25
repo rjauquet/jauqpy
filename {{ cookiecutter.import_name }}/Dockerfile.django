@@ -1,0 +1,12 @@
+FROM Dockerfile.base
+
+EXPOSE 8{{ cookiecutter.id }}
+
+COPY . ./app
+
+WORKDIR ./app
+
+RUN poetry install --no-dev
+
+ENTRYPOINT ["./bin/start-django.sh"]
+

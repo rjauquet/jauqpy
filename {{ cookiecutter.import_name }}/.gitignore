@@ -2,6 +2,8 @@
 .flag*
 .container_data/
 docs/_build/
+local.py
 *.log
 *.logs
-local.py
+*.key
+*.csv
