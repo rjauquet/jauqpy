@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.utils import timezone
 from ulid2 import generate_ulid_as_uuid
 
-from {{ cookiecutter.import_name }}.base.managers import BaseManager
+from {{ cookiecutter.import_name }}.base.managers import BaseManager, PolymorphicBaseManager
 
 
 class BaseModel(models.Model):

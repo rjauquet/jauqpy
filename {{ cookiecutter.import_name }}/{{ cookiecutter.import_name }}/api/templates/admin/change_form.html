@@ -1,11 +1,11 @@
-{% extends "admin/change_form.html" %}
+\{\% extends "admin/change_form.html" \%\}
 
-{% block object-tools-items %}
-  {% for rl in related_links %}
+\{\% block object-tools-items \%\}
+  \{\% for rl in related_links \%\}
       <li>
-          <a href="{{ rl.href }}" class="historylink">{{ rl.text }}</a>
+          <a href="\{\{ rl.href \}\}" class="historylink">\{\{ rl.text \}\}</a>
       </li>
-  {% endfor %}
-  {{ block.super }}
-{% endblock %}
+  \{\% endfor \%\}
+  \{\{ block.super \}\}
+\{\% endblock \%\}
 

@@ -7,6 +7,8 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
+from {{ cookiecutter.import_name }}.{{ cookiecutter.app }} import views
+
 urlpatterns = [
     path("admin/docs/", include("django.contrib.admindocs.urls")),
     path('admin/', admin.site.urls),

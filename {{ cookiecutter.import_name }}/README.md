@@ -4,6 +4,8 @@
 
 ### Prereqs
 
+Docker
+
 Poetry
 https://python-poetry.org/docs/
 

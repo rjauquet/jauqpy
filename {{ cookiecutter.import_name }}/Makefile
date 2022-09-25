@@ -18,7 +18,8 @@ INSTALL_FLAG := .flag-install
 .PHONY: setup
 setup:
 	-@cp -n .env-example .env || true
-	./bin/verchew
+	@md5sum -c $(SETUP_FLAG) --status || \
+		./bin/verchew && md5sum ./bin/verchew >| $(SETUP_FLAG)
 
 ## installs python dependencies, skipping if there are no known changes
 .PHONY: install

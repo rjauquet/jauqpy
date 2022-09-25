@@ -2,6 +2,7 @@
 Django queryset managers for models.
 """
 from django.db.models.manager import Manager
+from polymorphic.managers import PolymorphicManager
 
 from {{ cookiecutter.import_name }}.base.querysets import BaseQuerySet
 
@@ -32,3 +33,9 @@ class BaseManager(Manager.from_queryset(BaseQuerySet)):  # type: ignore
         if self.show_existing:
             queryset |= base_queryset.filter(deleted_at__isnull=True)
         return queryset
+
+
+class PolymorphicBaseManager(BaseManager, PolymorphicManager):
+    """
+    A polymorphic manager with included soft deletion from BaseManager
+    """

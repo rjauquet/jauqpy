@@ -23,7 +23,7 @@ services:
         command: make django
         tty: true
 
-      celery:
+    celery:
         build: .
         env_file: .env
         environment:
@@ -43,7 +43,7 @@ services:
         command: make celery
         tty: true
 
-      beat:
+    beat:
         build: .
         env_file: .env
         environment:
