@@ -10,8 +10,6 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-from {{ cookiecutter.import_name }}.base.views import health, webhook
-
 urlpatterns = [
     path("admin/docs/", include("django.contrib.admindocs.urls")),
     path('admin/', admin.site.urls),
@@ -26,6 +24,5 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),
-    path("api/health/", health, name="health"),
-    path("api/webhook/", webhook, name="webhook"),
+    path("api/", include("{{ cookiecutter.import_name }}.base.urls")),
 ]
