@@ -2,6 +2,7 @@
 name = "jauqpy"
 version = "0.1.0"
 description = "Jauquet Python Template"
+package-mode = false
 authors = ["Rob Ervin Jauquet <rob@jauqshop.com>"]
 
 [tool.poetry.dependencies]
